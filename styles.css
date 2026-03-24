@@ -6,12 +6,13 @@
 
 body {
   --bg-main-color: #f8fafc;
-  --seperator-color: #d9d9d9;
   --text-color: #000000;
   --publication-date-color: #4d5562;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-main-color);
 }
@@ -24,10 +25,12 @@ article img {
 }
 
 article h2 {
-  margin-block: 1rem;
+  max-width: 500px;
+  margin-bottom: 1rem;
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   font-weight: 600;
   text-wrap: balance;
+  white-space: pre-line;
 }
 
 article p {
@@ -37,6 +40,7 @@ article p {
 }
 
 h1 {
+  max-width: 540px;
   font-size: clamp(1.8rem, 2.2vw, 2.25rem);
   text-align: center;
   font-weight: 600;
@@ -71,6 +75,38 @@ section {
 }
 
 .main {
-  padding: 2rem 1rem;
+  flex: 1;
+  padding: 2rem;
   color: var(--text-color);
+}
+
+@media screen and (min-width: 37.5rem) {
+  article h2 {
+    text-wrap: auto;
+    white-space: normal;
+  }
+
+  section article {
+    display: flex;
+    gap: 3rem;
+  }
+
+  h1 {
+    margin: auto;
+    margin-bottom: 3rem;
+    text-wrap: auto;
+  }
+
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 64rem){
+  h1 {
+    width: 500px;
+  }
 }
